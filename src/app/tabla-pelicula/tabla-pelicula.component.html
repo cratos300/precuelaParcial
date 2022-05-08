@@ -1,0 +1,40 @@
+
+<!-- 
+
+<div *ngFor="let pelicula of listadoPeliculas">
+ <span> {{pelicula.id}} </span>
+ <span> {{pelicula.nombre}} </span>
+ <span> {{pelicula.tipo}} </span>
+ <span> {{pelicula.fechaEstreno}} </span>
+ <span> {{pelicula.cantidadPublico}} </span>
+ <span><img width="100px" height="75px" [src]="pelicula.fotoPelicula"> </span>
+</div> -->
+
+
+
+
+
+
+  <table class="table table-hover  table-bordered d">
+    <thead class="thead-dark">
+      <tr>
+        <th >id</th>
+        <th >Nombre</th>
+        <th >Tipo</th>
+        <th >FechaDeEstreno</th>
+        <th >CantidadPublico</th>
+        <th >FotoPelicula</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let pelicula of listadoPeliculas">
+        <th (click) = "mostrarPelicula(pelicula)"> {{pelicula.id}}</th>
+        <td (click) = "mostrarPelicula(pelicula)"> {{pelicula.nombre}}</td>
+        <td (click) = "mostrarPelicula(pelicula)"> {{pelicula.tipo}}</td>
+        <td (click) = "mostrarPelicula(pelicula)"> {{pelicula.fechaEstreno}}</td>
+        <td (click) = "mostrarPelicula(pelicula)"> {{pelicula.cantidadPublico}}</td>
+        <td (click) = "mostrarPelicula(pelicula)"><img width="100px" height="75px" [src]="pelicula.fotoPelicula"></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,63 @@
+<div class="baaa">
+        <h4 class="ddd">
+            <span>COMPONENTE ALTA-ACTOR</span>
+        </h4>
+<form [formGroup] = "formGroup" (ngSubmit) = "aceptar()">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="firstName">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName= "nombre">
+      <small class="invalid" *ngIf = "formGroup.get('nombre')?.hasError('required') && formGroup.get('nombre')?.touched">El nombre es requerido</small>
+      <div class="invalid-feedback">
+        Valid first name is required.
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="">Apellido</label>
+      <input type="text" class="form-control" placeholder="Apellido" id="Apellido" formControlName= "apellido">
+      <small class="invalid" *ngIf = "formGroup.get('apellido')?.hasError('required') && formGroup.get('apellido')?.touched">El apellido es requerido</small>
+      <div class="invalid-feedback">
+        Valid last name is required.
+      </div>
+    </div>
+  </div> 
+  <div class="mb-3">
+    <label for="">Edad</label>
+    <input type="number" class="form-control" placeholder="Edad" id="edad" formControlName= "edad">
+    <small class="invalid" *ngIf = "formGroup.get('edad')?.hasError('required') && formGroup.get('edad')?.touched">La edad es requerida</small>
+    <small class="invalid" *ngIf = "formGroup.get('edad')?.hasError('min') || formGroup.get('edad')?.hasError('max') && formGroup.get('edad')?.touched">La edad debe  ser entre.. 18 y 90 años</small>
+    <div class="invalid-feedback">
+      Valid last name is required.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="email" id="email" placeholder="ejemplo@ejemplo.com" formControlName= "email">
+    <small class="invalid" *ngIf = "formGroup.get('email')?.hasError('required') && formGroup.get('email')?.touched">El email es requerido</small>
+    <small class="invalid" *ngIf = "formGroup.get('email')?.hasError('pattern') && formGroup.get('email')?.touched">Formato inválido.</small>
+  </div>
+  <h4 class="mb-3">Sexo</h4>
+
+  <div class="d-block my-3">
+    <fieldset>
+        <div>
+          <input  formControlName= "sexo" type="radio" id="soup" name="respuesta" value="MASCULINO">
+          <label class="l" for="soup">MASCULINO</label>
+        </div>
+        <div>
+          <input  formControlName= "sexo" type="radio" id="curry" name="respuesta" value="FEMENINO">
+          <label class="l" for="curry">FEMENINO</label>
+        </div>
+        <small class="invalid" *ngIf = "formGroup.get('sexo')?.hasError('required') && formGroup.get('sexo')?.touched">El sexo es requerido</small>
+    </fieldset>
+
+    <hr *ngIf="mostrar != null">
+    <div *ngIf="mostrar != null">
+        {{mostrar.translations.spa.common}}
+        <img [src] = "mostrar.flags.png" alt="">
+      </div>
+   <hr *ngIf="mostrar != null">
+  </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled] = "formGroup.invalid">Enviar</button>
+</form>
+</div>

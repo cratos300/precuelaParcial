@@ -1,0 +1,30 @@
+ ul > li:hover
+ {
+    background-color: bisque;
+ }
+ .agrandar
+ {
+     height: 40px;
+ }
+ img
+ {
+     width: 40px;
+     height: 40px;
+ }
+ .baaa
+{
+    width: 330px;
+    border: solid 3px black;
+    
+}
+
+.ddd
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h6
+{
+    cursor: default
+}
