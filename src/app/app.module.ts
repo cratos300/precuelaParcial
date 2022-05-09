@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-import { PeliculaAltaComponent } from './pelicula-alta/pelicula-alta.component';
 import { ActorAltaComponent } from './actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './actor-listado/actor-listado.component';
 import { PeliculaListadoComponent } from './pelicula-listado/pelicula-listado.component';
@@ -18,20 +17,25 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PeliculaAltaComponent } from './pelicula-alta/pelicula-alta.component';
+import { CheckoutPeliculaComponent } from './checkout-pelicula/checkout-pelicula.component';
+import { TablaActorComponent } from './tabla-actor/tabla-actor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BusquedaComponent,
-    PeliculaAltaComponent,
     ActorAltaComponent,
     ActorListadoComponent,
     PeliculaListadoComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
     TablaPaisesComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PeliculaAltaComponent,
+    CheckoutPeliculaComponent,
+    TablaActorComponent,
   ],
   imports: [
     FormsModule,

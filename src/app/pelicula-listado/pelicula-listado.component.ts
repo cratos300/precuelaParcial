@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Actor } from '../clases/actor';
+import { AltaActorService } from '../services/alta-actor.service';
 
 @Component({
   selector: 'app-pelicula-listado',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculaListadoComponent implements OnInit {
 
-  constructor() { }
+  @Input() list:any = []; 
+
+  constructor(act:AltaActorService)
+  {
+  }
 
   ngOnInit(): void {
+  }
+  seleccionado(data:any)
+  {
+    console.log("asd");
+    
   }
 
 }

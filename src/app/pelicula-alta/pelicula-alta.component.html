@@ -1,1 +1,52 @@
-<p>pelicula-alta works!</p>
+<div class="baaa">
+    <h4 class="ddd">
+        <span>COMPONENTE ALTA-PELICULA</span>
+    </h4>
+    <!--;
+    fotoPelicula:any;
+ -->
+<form [formGroup] = "formGroup" (ngSubmit) = "aceptar()">
+<div class="row">
+<div class="col-md-6 mb-3">
+  <label for="firstName">Nombre Pelicula</label>
+  <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName= "nombre">
+  <small class="invalid" *ngIf = "formGroup.get('nombre')?.hasError('required') && formGroup.get('nombre')?.touched">El nombre es requerido</small>
+  <div class="invalid-feedback">
+    Valid first name is required.
+  </div>
+</div>
+<div class="col-md-6 mb-3">
+  <label for="">Tipo</label>
+  <input type="text" class="form-control" placeholder="Tipo" id="tipo" formControlName= "tipo">
+  <small class="invalid" *ngIf = "formGroup.get('tipo')?.hasError('required') && formGroup.get('tipo')?.touched">El tipo de pelicula es requerido</small>
+  <div class="invalid-feedback">
+    Valid last name is required.
+  </div>
+</div>
+</div> 
+<div class="mb-3">
+<label for="">Fecha Estreno</label>
+<input type="text" class="form-control" placeholder="fecha_estreno" id="fecha_estreno" formControlName= "fecha_estreno">
+<small class="invalid" *ngIf = "formGroup.get('fecha_estreno')?.hasError('required') && formGroup.get('fecha_estreno')?.touched">La fecha de estreno es requerida</small>
+<div class="invalid-feedback">
+  Valid last name is required.
+</div>
+</div>
+<div class="mb-3">
+<label for="cantidad_publico">Cantidad publico</label>
+<input type="cantidad_publico" class="form-control" placeholder="cantidad publico" id="email" placeholder="ejemplo@ejemplo.com" formControlName= "cantidad_publico">
+<small class="invalid" *ngIf = "formGroup.get('cantidad_publico')?.hasError('required') && formGroup.get('cantidad_publico')?.touched">La cantidad de publico es requerido</small>
+</div>
+    <div class="d-block my-3">
+        <input  type="file" accept=".png, .jpg, .jpeg" multiple (change) = "cargarImagen($event)" formControlName="inputFile"  id="inputFile">
+        <small class="invalid" *ngIf = "formGroup.get('inputFile')?.hasError('required') && formGroup.get('inputFile')?.touched">El archivo es requerido</small>
+    </div>
+     <hr *ngIf="actorr != null">
+    <div *ngIf="actorr != null">
+        {{actorr.nombre}}
+        {{actorr.apellido}}
+      </div>
+   <hr *ngIf="actorr != null">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled] = "formGroup.invalid">Enviar</button>
+</form>
+</div>

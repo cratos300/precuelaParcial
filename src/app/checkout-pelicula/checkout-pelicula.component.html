@@ -1,0 +1,15 @@
+<body class="bg-light baaa">
+    <div class="container mt-4">
+       <div class="espacio">
+      <h1>COMPONENTE CHECKOUT(PRINCIPAL)</h1>
+    </div>
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+     <app-tabla-actor [list] = "listcheckout" (actorSeleccionado) = "funcionouput($event)"></app-tabla-actor>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <app-pelicula-alta [actorr] = "unactorr"></app-pelicula-alta>
+    </div>
+  </div>
+</div>
+</body>
